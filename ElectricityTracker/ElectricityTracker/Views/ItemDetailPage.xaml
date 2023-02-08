@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             x:Class="ElectricityTracker.Views.ItemDetailPage"
+             xmlns:local="clr-namespace:ElectricityTracker.Views"
+    
+             Title="{Binding Title}">
+    <ScrollView>
+    <StackLayout Spacing="10" Padding="15">
+        <Label x:Name="A1" FontSize="30" />
+        <Label Text="Hours of use:" FontSize="Medium" />
+        <microcharts:ChartView x:Name="BarChart"  HeightRequest="300" />
+        
+        <!--<Label Text="Text:" FontSize="Medium" />
+        <Label Text="{Binding Text}" FontSize="Small"/>-->
+        <Label Text="Cost this month:" FontSize="Medium" />
+        <Label x:Name="Cost" FontSize="Small"/>
+        <Label x:Name="CostPrediction" FontSize="Small"/>
+        <Label x:Name="Savable" FontSize="Small"/>
+        <Label Text="kWh this month:" FontSize="Medium" />
+        <Label x:Name="kWh" FontSize="Small"/>
+        <Label x:Name="kWhPrediction" FontSize="Small"/>
+        <Label Text="Average cost per day:" FontSize="Medium" />
+        <Label x:Name="Costday" FontSize="Small"/>
+        <Label Text="Average kWh per day:" FontSize="Medium" />
+        <Label x:Name="kWhday" FontSize="Small"/>
+        <Label Text="Average kilowatt per hour of the appliance:" FontSize="Medium" />
+        <Label x:Name="AvgkW" FontSize="Small"/>
+        <Label x:Name="ComparekW" FontSize="Small"/>
+        <Label Text="Energy Meter ID:" FontSize="Medium" />
+        <Label Text="{Binding Description}" FontSize="Small"/>
+    </StackLayout>
+    </ScrollView>
+</ContentPage>

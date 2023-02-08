@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ElectricityTracker.Views.WarrantyDetailPage">
+    <ScrollView>
+        <StackLayout Spacing="10" Padding="15">
+            <Label Text="{Binding Description}" FontSize="30" />
+
+
+            <Label Text="Purchsed Date: " FontSize="Medium" />
+            <Label Text="{Binding Purchased}" FontSize="Small"/>
+
+            <Label Text="Warranty until: " FontSize="Medium" />
+            <Label Text="{Binding endWarranty}" FontSize="Small"/>
+
+            <Label Text="Warranty status:" FontSize="Medium" />
+            <Label Text="{Binding warrantystatus}" FontSize="Small"/>
+            
+            
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ElectricityTracker.Views.WarrantyPage"
+             Title="{Binding Title}"
+             xmlns:local="clr-namespace:ElectricityTracker.ViewModels"  
+             xmlns:model="clr-namespace:ElectricityTracker.Models" 
+             >
+    <StackLayout>
+        <Label Text="To make a warranty claim, you can go to our customer service" FontSize="Medium" Padding="10"/>
+        
+    <RefreshView x:DataType="local:WarrantyViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+        <CollectionView x:Name="ItemsListView"
+                ItemsSource="{Binding AItems}"
+                SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="10" x:DataType="model:ApplianceFmt">
+                        <Label Text="{Binding DeviceName}" 
+                            LineBreakMode="NoWrap" 
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            FontSize="30" />
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                NumberOfTapsRequired="1"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:WarrantyViewModel}}, Path=ItemTapped}"		
+                                CommandParameter="{Binding .}">
+                            </TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+
+                    </StackLayout>
+
+                </DataTemplate>
+
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </RefreshView>
+    </StackLayout>
+</ContentPage>

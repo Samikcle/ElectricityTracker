@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ElectricityTracker.Views.NewItemPage"
+             Shell.PresentationMode="ModalAnimated"
+             Title="New Item"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true">
+    <ContentPage.Content>
+        <StackLayout Spacing="3" Padding="15">
+            <Label Text="Appliance Type:" FontSize="Medium" />
+            <Entry Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" />
+            <Label Text="Energy Meter ID: " FontSize="Medium" />
+            <Editor Text="{Binding Description, Mode=TwoWay}"  AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+            <Label Text="Energy Meter Purchased Date: " FontSize="Medium" />
+            <Grid>
+                <Entry Grid.Row="0" Grid.Column="0" Text="{Binding Date, Mode=TwoWay}" Placeholder="Date" FontSize="Medium" Keyboard="Numeric"/>
+                <Entry Grid.Row="0" Grid.Column="1" Text="{Binding Month, Mode=TwoWay}" Placeholder="Month" FontSize="Medium" Keyboard="Numeric"/>
+                <Entry Grid.Row="0" Grid.Column="2" Text="{Binding Year, Mode=TwoWay}" Placeholder="Year" FontSize="Medium" Keyboard="Numeric"/>
+            </Grid>
+            <Label Text="Receipt ID: " FontSize="Medium" />
+            <Editor AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>

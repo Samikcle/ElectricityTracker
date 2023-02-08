@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="ElectricityTracker.Views.CustomerServicePage"
+             Title="{Binding Title}">
+    <ContentPage.Content>
+        <StackLayout Spacing="3" Padding="15">
+            <Grid>
+                <Label Text="Email: " Grid.Row="0" Grid.Column="0" FontSize="Medium"/>
+                <Entry Text="{Binding Email}" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" FontSize="Medium"/>
+                <Label Text="Contact No: " Grid.Row="1" Grid.Column="0" FontSize="Medium"/>
+                <Entry Text="{Binding Contact}" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" FontSize="Medium"/>
+                <Label Text="Issue: " Grid.Row="2" Grid.Column="0" FontSize="Medium"/>
+                <!--<entry text="{binding Issue}" grid.row="2" grid.column="1" grid.columnspan="2" fontsize="medium"/>-->
+                <Picker Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" FontSize="Medium">
+                    <Picker.Items>
+                        <x:String>App Issue</x:String>
+                        <x:String>Product Issue</x:String>
+                        <x:String>Warranty</x:String>
+                    </Picker.Items>
+                </Picker>
+            </Grid>
+            <Grid>
+                <Label Text="Elaborate:" Grid.Row="0" FontSize="Medium"/>
+                <Editor Text="{Binding Elaborate}" FontSize="Medium" Grid.Row="1" Grid.RowSpan="7" BackgroundColor="#edebeb" />
+            </Grid>
+            <Button Text="Submit" Command="{Binding Submit}" HorizontalOptions="FillAndExpand"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
